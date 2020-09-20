@@ -14,7 +14,7 @@ class ViewController: UIViewController {
         return UILabel()
     }()
     
-    lazy var resultLabel: UILabel = {
+    lazy var animationLabel: UILabel = {
         return UILabel()
     }()
 
@@ -24,48 +24,41 @@ class ViewController: UIViewController {
         setUI()
     }
     
-    override func becomeFirstResponder() -> Bool {
-        return true
-    }
-    
-    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
-        if motion == .motionShake {
-            resultLabel.text = "shake"
-        }
-    }
-    
     private func setUI() {
         view.addSubview(gestureLabel)
         gestureLabel.translatesAutoresizingMaskIntoConstraints = false
-        gestureLabel.text = "Please tap or double tap."
+        gestureLabel.text = "gesture"
         gestureLabel.isUserInteractionEnabled = true
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.tapGestureLabel(_:)))
         gestureLabel.addGestureRecognizer(tapGestureRecognizer)
         
-        let doubleTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.doubleTapGestureLabel(_:)))
-        doubleTapGestureRecognizer.numberOfTapsRequired = 2
-        gestureLabel.addGestureRecognizer(doubleTapGestureRecognizer)
-        
-        view.addSubview(resultLabel)
-        resultLabel.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(animationLabel)
+        animationLabel.translatesAutoresizingMaskIntoConstraints = false
+        animationLabel.text = "animation"
+        animationLabel.isUserInteractionEnabled = true
+        let tapAnimationGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.tapAnimationLabel(_:)))
+        animationLabel.addGestureRecognizer(tapAnimationGestureRecognizer)
         
         NSLayoutConstraint.activate([
             gestureLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            gestureLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 50),
+            gestureLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 150),
             
-            resultLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 80),
-            resultLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+            animationLabel.topAnchor.constraint(equalTo: gestureLabel.bottomAnchor, constant: 50),
+            animationLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
         
     }
     
     @objc private func tapGestureLabel(_ gesture: UITapGestureRecognizer) {
-        resultLabel.text = "tap"
+        let gestureVC = GestureViewController()
+        gestureVC.view.backgroundColor = .white
+        navigationController?.pushViewController(gestureVC, animated: true)
     }
     
-    @objc private func doubleTapGestureLabel(_ gesture: UITapGestureRecognizer) {
-        resultLabel.text = "double tap"
+    @objc private func tapAnimationLabel(_ gesture: UITapGestureRecognizer) {
+        let gestureVC = AnimationViewController()
+        gestureVC.view.backgroundColor = .white
+        navigationController?.pushViewController(gestureVC, animated: true)
     }
-
 }
 
