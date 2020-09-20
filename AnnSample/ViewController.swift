@@ -17,6 +17,10 @@ class ViewController: UIViewController {
     lazy var animationLabel: UILabel = {
         return UILabel()
     }()
+    
+    lazy var keyChainLabel: UILabel = {
+        return UILabel()
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,12 +43,22 @@ class ViewController: UIViewController {
         let tapAnimationGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.tapAnimationLabel(_:)))
         animationLabel.addGestureRecognizer(tapAnimationGestureRecognizer)
         
+        view.addSubview(keyChainLabel)
+        keyChainLabel.translatesAutoresizingMaskIntoConstraints = false
+        keyChainLabel.text = "keyChain"
+        keyChainLabel.isUserInteractionEnabled = true
+        let tapkeyChainGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.tapkeyChainLabel(_:)))
+        keyChainLabel.addGestureRecognizer(tapkeyChainGestureRecognizer)
+        
         NSLayoutConstraint.activate([
             gestureLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             gestureLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 150),
             
             animationLabel.topAnchor.constraint(equalTo: gestureLabel.bottomAnchor, constant: 50),
-            animationLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+            animationLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            
+            keyChainLabel.topAnchor.constraint(equalTo: animationLabel.bottomAnchor, constant: 50),
+            keyChainLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
         ])
         
     }
@@ -59,6 +73,9 @@ class ViewController: UIViewController {
         let gestureVC = AnimationViewController()
         gestureVC.view.backgroundColor = .white
         navigationController?.pushViewController(gestureVC, animated: true)
+    }
+    
+    @objc private func tapkeyChainLabel(_ gesture: UITapGestureRecognizer) {
     }
 }
 

@@ -15,6 +15,7 @@
 		95D8C9FD25174C2100B7097B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95D8C9FB25174C2100B7097B /* LaunchScreen.storyboard */; };
 		95D8CA05251755B900B7097B /* GestureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D8CA04251755B900B7097B /* GestureViewController.swift */; };
 		95D8CA072517587600B7097B /* AnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D8CA062517587600B7097B /* AnimationViewController.swift */; };
+		95E6A24425177539001DB9D0 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E6A24325177539001DB9D0 /* KeychainManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		95D8C9FE25174C2100B7097B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95D8CA04251755B900B7097B /* GestureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureViewController.swift; sourceTree = "<group>"; };
 		95D8CA062517587600B7097B /* AnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationViewController.swift; sourceTree = "<group>"; };
+		95E6A24325177539001DB9D0 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				95D8C9F925174C2100B7097B /* Assets.xcassets */,
 				95D8C9FB25174C2100B7097B /* LaunchScreen.storyboard */,
 				95D8C9FE25174C2100B7097B /* Info.plist */,
+				95E6A24325177539001DB9D0 /* KeychainManager.swift */,
 			);
 			path = AnnSample;
 			sourceTree = "<group>";
@@ -145,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				95D8CA05251755B900B7097B /* GestureViewController.swift in Sources */,
+				95E6A24425177539001DB9D0 /* KeychainManager.swift in Sources */,
 				95D8C9F525174C2000B7097B /* ViewController.swift in Sources */,
 				95D8CA072517587600B7097B /* AnimationViewController.swift in Sources */,
 				95D8C9F125174C2000B7097B /* AppDelegate.swift in Sources */,
