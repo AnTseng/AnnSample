@@ -101,8 +101,8 @@ class KeychainManager: NSObject {
         if readState == errSecSuccess {
             if let data = queryResult as! NSData? {
                 do {
-                    idObject = try NSKeyedUnarchiver.unarchivedObject(ofClasses: <#T##[AnyClass]#>, from: <#T##Data#>)
-                    idObject = NSKeyedUnarchiver.unarchiveObject(with: data as Data) as Any
+                    //idObject = try NSKeyedUnarchiver.unarchivedObject(ofClasses: <#T##[AnyClass]#>, from: <#T##Data#>)
+                    idObject = try NSKeyedUnarchiver.unarchiveObject(with: data as Data) as Any
                 } catch {
                     print("error: \(error.localizedDescription)")
                 }
